@@ -25,7 +25,7 @@ def generate_route_map(start_lat, start_lon, end_lat, end_lon):
     route_map = folium.Map(
         location=[start_lat, start_lon], 
         zoom_start=17, 
-        tiles="http://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}",
+        tiles="http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}",
         attr="Google"
     )
     
@@ -46,6 +46,6 @@ def generate_route_map(start_lat, start_lon, end_lat, end_lon):
     print(f"Success: Open {output_file} in your web browser to see the visual comparison.")
 
 if __name__ == "__main__":
-    start_pt = (20.273824, 85.776182) 
-    end_pt = (20.275463, 85.777021)
+    start_pt = (20.268645, 85.840747) 
+    end_pt = (20.275596, 85.834382)
     generate_route_map(*start_pt, *end_pt)
