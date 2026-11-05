@@ -25,7 +25,7 @@ def generate_route_map(start_lat, start_lon, end_lat, end_lon):
     route_map = folium.Map(
         location=[start_lat, start_lon], 
         zoom_start=17, 
-        tiles="http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}",
+        tiles="http://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}",
         attr="Google"
     )
     

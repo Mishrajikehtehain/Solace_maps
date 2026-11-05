@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from config import DATA_DIR
-
+# this part is synthetic and is to be modified later on
 def calculate_final_weights():
     print("Loading shaded graph...")
     G = ox.load_graphml(DATA_DIR / "campus_graph_shaded.graphml")
@@ -45,7 +45,8 @@ def calculate_final_weights():
             shade_cov = float(shade_cov)
         except (ValueError, TypeError):
             shade_cov = 0.0
-            
+
+        #    
         shade_mitigation = 1.0 - (shade_cov * 0.4) 
         water_relief = 0.85 if row['water_point_nearby'] == 1 else 1.0
         
@@ -55,7 +56,8 @@ def calculate_final_weights():
             edge_length = edge_length.iloc[0]
         elif isinstance(edge_length, (list, tuple)):
             edge_length = edge_length[0] if len(edge_length) > 0 else 1.0
-            
+
+        #main part of the programm ie the weight calculations    
         edge_weight = total_raw_heat * shade_mitigation * water_relief * float(edge_length)
         return max(0.1, edge_weight)
 

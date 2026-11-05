@@ -46,7 +46,7 @@ def find_best_routes(start_lat, start_lon, end_lat, end_lon):
 
 if __name__ == "__main__":
     # Test coordinates inside OUTR campus
-    start_pt = (20.2745, 85.7760) 
-    end_pt = (20.2765, 85.78)
+    start_pt = (20.268756, 85.840829) 
+    end_pt = (20.275318, 85.835550)
     
     find_best_routes(*start_pt, *end_pt)
